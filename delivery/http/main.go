@@ -16,7 +16,7 @@ import (
 func main() {
 
 	dbconn, err := gorm.Open("postgres",
-		"postgres://postgres:P@$$w0rdD2@localhost/restsample?sslmode=disable")
+		"postgres://postgres:P@$$w0rdD2@localhost/restaurantdb?sslmode=disable")
 
 	if err != nil {
 		panic(err)
