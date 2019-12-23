@@ -2,6 +2,7 @@ package handler
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strconv"
 
@@ -103,7 +104,8 @@ func (ach *AdminCommentHandler) PostComment(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
-	w.Header().Set("Location", "/v1/admin/comments/"+string(comment.ID))
+	p := fmt.Sprintf("/v1/admin/comments/%d", comment.ID)
+	w.Header().Set("Location", p)
 	w.WriteHeader(http.StatusCreated)
 	return
 }
